@@ -1,0 +1,171 @@
+TARGET = Some("x86_64-unknown-linux-gnu")
+OPT_LEVEL = Some("0")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("true")
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/adler32.o" "-c" "libtcod/src/zlib/adler32.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/crc32.o" "-c" "libtcod/src/zlib/crc32.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/deflate.o" "-c" "libtcod/src/zlib/deflate.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/infback.o" "-c" "libtcod/src/zlib/infback.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/inffast.o" "-c" "libtcod/src/zlib/inffast.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/inflate.o" "-c" "libtcod/src/zlib/inflate.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/inftrees.o" "-c" "libtcod/src/zlib/inftrees.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/trees.o" "-c" "libtcod/src/zlib/trees.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/zutil.o" "-c" "libtcod/src/zlib/zutil.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/compress.o" "-c" "libtcod/src/zlib/compress.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/uncompr.o" "-c" "libtcod/src/zlib/uncompr.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzclose.o" "-c" "libtcod/src/zlib/gzclose.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzlib.o" "-c" "libtcod/src/zlib/gzlib.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzread.o" "-c" "libtcod/src/zlib/gzread.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-w" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzwrite.o" "-c" "libtcod/src/zlib/gzwrite.c"
+exit status: 0
+AR_x86_64-unknown-linux-gnu = None
+AR_x86_64_unknown_linux_gnu = None
+HOST_AR = None
+AR = None
+running: "ar" "cq" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libz.a" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/adler32.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/crc32.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/deflate.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/infback.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/inffast.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/inflate.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/inftrees.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/trees.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/zutil.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/compress.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/uncompr.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzclose.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzlib.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzread.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zlib/gzwrite.o"
+exit status: 0
+running: "ar" "s" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libz.a"
+exit status: 0
+cargo:rustc-link-lib=static=z
+cargo:rustc-link-search=native=/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out
+cargo:rustc-link-lib=static=tcod
+cargo:rerun-if-env-changed=SDL2_NO_PKG_CONFIG
+cargo:rerun-if-env-changed=PKG_CONFIG_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG
+cargo:rerun-if-env-changed=PKG_CONFIG
+cargo:rerun-if-env-changed=SDL2_STATIC
+cargo:rerun-if-env-changed=SDL2_DYNAMIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_STATIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_DYNAMIC
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_PATH
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_LIBDIR
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_SYSROOT_DIR
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+cargo:rerun-if-env-changed=SYSROOT
+cargo:rerun-if-env-changed=SDL2_STATIC
+cargo:rerun-if-env-changed=SDL2_DYNAMIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_STATIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_DYNAMIC
+cargo:rustc-link-search=native=/usr/lib64
+cargo:rustc-link-lib=SDL2
+cargo:rerun-if-env-changed=PKG_CONFIG_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG
+cargo:rerun-if-env-changed=PKG_CONFIG
+cargo:rerun-if-env-changed=SDL2_STATIC
+cargo:rerun-if-env-changed=SDL2_DYNAMIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_STATIC
+cargo:rerun-if-env-changed=PKG_CONFIG_ALL_DYNAMIC
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_PATH
+cargo:rerun-if-env-changed=PKG_CONFIG_PATH
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_LIBDIR
+cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64-unknown-linux-gnu
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64_unknown_linux_gnu
+cargo:rerun-if-env-changed=HOST_PKG_CONFIG_SYSROOT_DIR
+cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/bresenham_c.o" "-c" "libtcod/src/bresenham_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/bsp_c.o" "-c" "libtcod/src/bsp_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/color_c.o" "-c" "libtcod/src/color_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/console_c.o" "-c" "libtcod/src/console_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/console_rexpaint.o" "-c" "libtcod/src/console_rexpaint.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_c.o" "-c" "libtcod/src/fov_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_circular_raycasting.o" "-c" "libtcod/src/fov_circular_raycasting.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_diamond_raycasting.o" "-c" "libtcod/src/fov_diamond_raycasting.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_permissive2.o" "-c" "libtcod/src/fov_permissive2.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_recursive_shadowcasting.o" "-c" "libtcod/src/fov_recursive_shadowcasting.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_restrictive.o" "-c" "libtcod/src/fov_restrictive.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/heightmap_c.o" "-c" "libtcod/src/heightmap_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/image_c.o" "-c" "libtcod/src/image_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/lex_c.o" "-c" "libtcod/src/lex_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/list_c.o" "-c" "libtcod/src/list_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/mersenne_c.o" "-c" "libtcod/src/mersenne_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/namegen_c.o" "-c" "libtcod/src/namegen_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/noise_c.o" "-c" "libtcod/src/noise_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/parser_c.o" "-c" "libtcod/src/parser_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/path_c.o" "-c" "libtcod/src/path_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_c.o" "-c" "libtcod/src/sys_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl2_c.o" "-c" "libtcod/src/sys_sdl2_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl_c.o" "-c" "libtcod/src/sys_sdl_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl_img_bmp.o" "-c" "libtcod/src/sys_sdl_img_bmp.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl_img_png.o" "-c" "libtcod/src/sys_sdl_img_png.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/tree_c.o" "-c" "libtcod/src/tree_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/txtfield_c.o" "-c" "libtcod/src/txtfield_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/wrappers.o" "-c" "libtcod/src/wrappers.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zip_c.o" "-c" "libtcod/src/zip_c.c"
+exit status: 0
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-I" "/usr/include/SDL2" "-I" "libtcod/include" "-I" "libtcod/src/zlib" "-Wall" "-Wextra" "-fno-strict-aliasing" "-ansi" "-w" "-DTCOD_SDL2" "-DNO_OPENGL" "-DNDEBUG" "-o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/png/lodepng.o" "-c" "libtcod/src/png/lodepng.c"
+exit status: 0
+running: "ar" "cq" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod.a" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/bresenham_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/bsp_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/color_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/console_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/console_rexpaint.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_circular_raycasting.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_diamond_raycasting.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_permissive2.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_recursive_shadowcasting.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/fov_restrictive.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/heightmap_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/image_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/lex_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/list_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/mersenne_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/namegen_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/noise_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/parser_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/path_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl2_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl_img_bmp.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/sys_sdl_img_png.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/tree_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/txtfield_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/wrappers.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/zip_c.o" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod/src/png/lodepng.o"
+exit status: 0
+running: "ar" "s" "/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out/libtcod.a"
+exit status: 0
+cargo:rustc-link-search=/home/void/Code/rust/rogue-like/target/debug/build/tcod-sys-f204a04774e1c46f/out
+cargo:rustc-link-lib=dylib=tcod
+cargo:rustc-link-lib=SDL2
