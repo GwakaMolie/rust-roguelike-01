@@ -213,7 +213,9 @@ fn render_all(tcod: &mut Tcod, game: &mut Game, objects: &[Object], fov_recomput
         for x in 0..MAP_WIDTH {
             let visible = tcod.fov.is_in_fov(x, y);
             let wall = game.map[x as usize][y as usize].block_sight;
-            let mut explored = &mut game.map[x as usize][y as usize].explored;
+
+            let explored = &mut game.map[x as usize][y as usize].explored;
+
             let color = match (visible, wall) {
                 // outside of field of view:
                 (false, true) => COLOR_DARK_WALL,
