@@ -20,6 +20,7 @@ const LIMIT_FPS: i32 = 20;
 
 const MAP_WIDTH: i32 = 80;
 const MAP_HEIGHT: i32 = 45;
+const PLAYER: usize = 0;
 
 const MAX_ROOM_MONSTERS: i32 = 3;
 mod colors {
@@ -70,18 +71,29 @@ pub struct Object {
     y: i32,
     color: Color,
     glyph: char,
+    name: String,
+    blocks: bool,
+    alive: bool,
 }
 
 impl Object {
-    pub fn new(x: i32, y: i32, glyph: char, color: Color) -> Self {
-        Object { x, y, glyph, color }
-    }
-
-    pub fn move_by(&mut self, dx: i32, dy: i32, game: &Game) {
-        if !game.map[(self.x + dx) as usize][(self.y + dy) as usize].blocked {
-            self.x += dx;
-            self.y += dy;
+    pub fn new(x: i32, y: i32, glyph: char, color: Color, name: &str, blocks: bool) -> Self {
+        Object {
+            x,
+            y,
+            glyph,
+            color,
+            name: name.into(),
+            blocks,
+            alive: false,
         }
+    }
+    pub fn get_pos(&self) -> (i32, i32) {
+        (self.x, self.y)
+    }
+    pub fn set_pos(&mut self, x: i32, y: i32) {
+        self.x = x;
+        self.y = y;
     }
     pub fn draw(&self, con: &mut dyn Console) {
         con.set_default_foreground(self.color);
@@ -149,10 +161,7 @@ impl RoomRect {
     }
 
     pub fn intersects_with(&self, other: &RoomRect) -> bool {
-        (self.x1 <= other.x2)
-            && (self.x2 >= other.x1)
-            && (self.y1 <= other.y2)
-            && (self.y2 >= other.y1)
+        (self.x1 < other.x2) && (self.x2 > other.x1) && (self.y1 < other.y2) && (self.y2 > other.y1)
     }
 
     fn create_h_tunnel(x1: i32, x2: i32, y: i32, map: &mut Map) {
@@ -194,13 +203,21 @@ pub fn make_map(objects: &mut Vec<Object>) -> Map {
             let (new_x, new_y) = new_room.center();
 
             if rooms.is_empty() {
-                objects[0].x = new_x;
-                objects[0].y = new_y;
+                objects[PLAYER].x = new_x;
+                objects[PLAYER].y = new_y;
             } else {
                 let (prev_x, prev_y) = rooms[rooms.len() - 1].center();
 
-                RoomRect::create_h_tunnel(prev_x, new_x, prev_y, &mut map);
-                RoomRect::create_v_tunnel(prev_y, new_y, new_x, &mut map);
+                // toss a coin (random bool value -- either true or false)
+                if rand::random() {
+                    // first move horizontally, then vertically
+                    RoomRect::create_h_tunnel(prev_x, new_x, prev_y, &mut map);
+                    RoomRect::create_v_tunnel(prev_y, new_y, new_x, &mut map);
+                } else {
+                    // first move vertically, then horizontally
+                    RoomRect::create_v_tunnel(prev_y, new_y, prev_x, &mut map);
+                    RoomRect::create_h_tunnel(prev_x, new_x, new_y, &mut map);
+                }
             }
             rooms.push(new_room);
         }
@@ -221,7 +238,7 @@ struct Tcod {
 fn render_all(tcod: &mut Tcod, game: &mut Game, objects: &[Object], fov_recompute: bool) {
     if fov_recompute {
         // recompute FOV if needed (the player moved or something)
-        let player = &objects[0];
+        let player = &objects[PLAYER];
         tcod.fov
             .compute_fov(player.x, player.y, TORCH_RADIUS, FOV_LIGHT_WALLS, FOV_ALGO);
     }
@@ -268,14 +285,15 @@ fn render_all(tcod: &mut Tcod, game: &mut Game, objects: &[Object], fov_recomput
     );
 }
 
-fn handle_keys(tcod: &mut Tcod, game: &Game, player: &mut Object) -> bool {
+fn handle_keys(tcod: &mut Tcod, map: &Map, objects: &mut Vec<Object>) -> bool {
     let key = tcod.root.wait_for_keypress(true);
 
     match key {
-        Key { code: Up, .. } => Object::move_by(player, 0, -1, game),
-        Key { code: Down, .. } => Object::move_by(player, 0, 1, game),
-        Key { code: Left, .. } => Object::move_by(player, -1, 0, game),
-        Key { code: Right, .. } => Object::move_by(player, 1, 0, game),
+        // fn move_by(id: usize, dx: i32, dy: i32, map: &Map, objects: &mut [Object]) {
+        Key { code: Up, .. } => move_by(PLAYER, 0, -1, map, objects),
+        Key { code: Down, .. } => move_by(PLAYER, 0, 1, map, objects),
+        Key { code: Left, .. } => move_by(PLAYER, -1, 0, map, objects),
+        Key { code: Right, .. } => move_by(PLAYER, 1, 0, map, objects),
         Key { code: Escape, .. } => return true,
         _ => {}
     }
@@ -289,20 +307,40 @@ fn place_objects(room: RoomRect, objects: &mut Vec<Object>) {
         let x = rand::thread_rng().gen_range(room.x1 + 1..room.x2);
         let y = rand::thread_rng().gen_range(room.y1 + 1..room.y2);
 
-        let monster = if rand::random::<f32>() < 0.8 {
+        let mut monster = if rand::random::<f32>() < 0.6 {
             // 80% chance of getting an orc
             // create an orc
-            Object::new(x, y, 'o', colors::DESATURATED_GREEN)
+            Object::new(x, y, 'o', colors::DESATURATED_GREEN, "orc", true)
         } else {
-            Object::new(x, y, 'T', colors::DARKER_GREEN)
+            // create a troll
+            Object::new(x, y, 'T', colors::DARKER_GREEN, "troll", true)
         };
-
+        monster.alive = true;
         objects.push(monster);
     }
 }
 
+fn is_blocked(x: i32, y: i32, map: &Map, objects: &[Object]) -> bool {
+    // first test the map tile
+    if map[x as usize][y as usize].blocked {
+        return true;
+    }
+    // now check for any blocking objects
+    objects
+        .iter()
+        .any(|object| object.blocks && object.get_pos() == (x, y))
+}
+
+fn move_by(id: usize, dx: i32, dy: i32, map: &Map, objects: &mut [Object]) {
+    let (x, y) = objects[id].get_pos();
+    if !is_blocked(x + dx, y + dy, map, objects) {
+        objects[id].set_pos(x + dx, y + dy);
+    }
+}
 fn main() {
-    let player = Object::new(25, 23, '@', WHITE);
+    let mut player = Object::new(25, 23, '@', WHITE, "you", true);
+    player.alive = true;
+
     let mut game_obj_list = vec![player];
 
     let mut game = Game {
@@ -344,15 +382,15 @@ fn main() {
         tcod.con.clear();
 
         // recompute only if the player has moved
-        let fov_recompute = previous_player_position != (game_obj_list[0].x, game_obj_list[0].y);
+        let fov_recompute =
+            previous_player_position != (game_obj_list[PLAYER].x, game_obj_list[PLAYER].y);
 
         // render the screen
         render_all(&mut tcod, &mut game, &game_obj_list, fov_recompute);
 
         tcod.root.flush();
-        let player = &mut game_obj_list[0];
-        previous_player_position = (player.x, player.y);
-        let exit = handle_keys(&mut tcod, &game, player);
+        previous_player_position = game_obj_list[PLAYER].get_pos();
+        let exit = handle_keys(&mut tcod, &game.map, &mut game_obj_list);
         if exit {
             break;
         }
