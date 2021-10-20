@@ -18,29 +18,44 @@ const SCREEN_WIDTH: i32 = 80;
 const SCREEN_HEIGHT: i32 = 50;
 const LIMIT_FPS: i32 = 20;
 
-pub const MAP_WIDTH: i32 = 80;
-pub const MAP_HEIGHT: i32 = 45;
+const MAP_WIDTH: i32 = 80;
+const MAP_HEIGHT: i32 = 45;
 
-pub const COLOR_DARK_WALL: Color = Color {
-    r: 40,
-    g: 40,
-    b: 40,
-};
-pub const COLOR_DARK_GROUND: Color = Color {
-    r: 70,
-    g: 70,
-    b: 70,
-};
-const COLOR_LIGHT_WALL: Color = Color {
-    r: 130,
-    g: 110,
-    b: 50,
-};
-const COLOR_LIGHT_GROUND: Color = Color {
-    r: 200,
-    g: 180,
-    b: 50,
-};
+const MAX_ROOM_MONSTERS: i32 = 3;
+mod colors {
+    use tcod::colors::*;
+
+    pub const COLOR_DARK_WALL: Color = Color {
+        r: 40,
+        g: 40,
+        b: 40,
+    };
+    pub const COLOR_DARK_GROUND: Color = Color {
+        r: 70,
+        g: 70,
+        b: 70,
+    };
+    pub const COLOR_LIGHT_WALL: Color = Color {
+        r: 50,
+        g: 50,
+        b: 50,
+    };
+    pub const COLOR_LIGHT_GROUND: Color = Color {
+        r: 80,
+        g: 80,
+        b: 80,
+    };
+    pub const DARKER_GREEN: Color = Color {
+        r: 90,
+        g: 140,
+        b: 55,
+    };
+    pub const DESATURATED_GREEN: Color = Color {
+        r: 90,
+        g: 200,
+        b: 55,
+    };
+}
 
 const ROOM_MAX_SIZE: i32 = 10;
 const ROOM_MIN_SIZE: i32 = 6;
@@ -153,7 +168,7 @@ impl RoomRect {
     }
 }
 
-pub fn make_map(player: &mut Object) -> Map {
+pub fn make_map(objects: &mut Vec<Object>) -> Map {
     let mut map = vec![vec![Tile::wall(); MAP_HEIGHT as usize]; MAP_WIDTH as usize];
     let mut rooms = vec![];
 
@@ -173,12 +188,14 @@ pub fn make_map(player: &mut Object) -> Map {
 
         if !does_room_overlap {
             RoomRect::create_room(new_room, &mut map);
+            // monster spawner
+            place_objects(new_room, objects);
 
             let (new_x, new_y) = new_room.center();
 
             if rooms.is_empty() {
-                player.x = new_x;
-                player.y = new_y;
+                objects[0].x = new_x;
+                objects[0].y = new_y;
             } else {
                 let (prev_x, prev_y) = rooms[rooms.len() - 1].center();
 
@@ -218,11 +235,11 @@ fn render_all(tcod: &mut Tcod, game: &mut Game, objects: &[Object], fov_recomput
 
             let color = match (visible, wall) {
                 // outside of field of view:
-                (false, true) => COLOR_DARK_WALL,
-                (false, false) => COLOR_DARK_GROUND,
+                (false, true) => colors::COLOR_DARK_WALL,
+                (false, false) => colors::COLOR_DARK_GROUND,
                 // inside fov:
-                (true, true) => COLOR_LIGHT_WALL,
-                (true, false) => COLOR_LIGHT_GROUND,
+                (true, true) => colors::COLOR_LIGHT_WALL,
+                (true, false) => colors::COLOR_LIGHT_GROUND,
             };
             if visible {
                 // since it's visible, explore it
@@ -264,13 +281,32 @@ fn handle_keys(tcod: &mut Tcod, game: &Game, player: &mut Object) -> bool {
     }
     return false;
 }
+fn place_objects(room: RoomRect, objects: &mut Vec<Object>) {
+    // choose random number of monsters
+    let num_monsters = rand::thread_rng().gen_range(0..=MAX_ROOM_MONSTERS);
+    for _ in 0..num_monsters {
+        // choose random spot for this monster
+        let x = rand::thread_rng().gen_range(room.x1 + 1..room.x2);
+        let y = rand::thread_rng().gen_range(room.y1 + 1..room.y2);
+
+        let monster = if rand::random::<f32>() < 0.8 {
+            // 80% chance of getting an orc
+            // create an orc
+            Object::new(x, y, 'o', colors::DESATURATED_GREEN)
+        } else {
+            Object::new(x, y, 'T', colors::DARKER_GREEN)
+        };
+
+        objects.push(monster);
+    }
+}
 
 fn main() {
     let player = Object::new(25, 23, '@', WHITE);
-    let mut game_obj_list = [player];
+    let mut game_obj_list = vec![player];
 
     let mut game = Game {
-        map: make_map(&mut game_obj_list[0]),
+        map: make_map(&mut game_obj_list),
     };
 
     let root: Root = Root::initializer()
